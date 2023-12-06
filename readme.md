@@ -1,0 +1,1 @@
+SQL Bağlantısı için DataAccess DataAccessServiceRegistration'a services.AddDbContext<NorthwindContext>(options => options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=TobetoProjectDb;Trusted_Connection=true")); ekleyin
