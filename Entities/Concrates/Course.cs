@@ -10,6 +10,7 @@ namespace Entities.Concrates
     public class Course : Entity<int>
     {
         public int categoryId { get; set; }
-        public string Name { get; set; }       
+        public string Name { get; set; }
+        public string Description { get; set; }
     }
 }
