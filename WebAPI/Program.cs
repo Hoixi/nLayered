@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("CorsPolicy", builder => builder
-        .WithOrigins("http://localhost:5138/", "http://localhost:5138") // Buraya güvenli orijinlerinizi ekleyin
+        .WithOrigins("http://localhost:5138/", "http://localhost:5138") // WebUI URL
         .AllowAnyMethod()
         .AllowAnyHeader());
 });
