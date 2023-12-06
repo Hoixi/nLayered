@@ -21,6 +21,7 @@ public static class DataAccessServiceRegistration
         services.AddDbContext<NorthwindContext>(options => options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=TobetoProjectDb;Trusted_Connection=true"));
         services.AddScoped<ICategoryDal, EfCategoryDal>();
         services.AddScoped<ICourseDal, EfCourseDal>();
+        services.AddScoped<IUserDal, EfUserDal>();
         return services;
     }
 }

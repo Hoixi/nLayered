@@ -10,5 +10,10 @@ namespace Entities.DTOs
     {
         public string courseName { get; set; }
         public string categoryName { get; set; }
+        public string description { get; set; }
+        public string ownerName { get; set; }
+        public string ownerSurname { get; set; }
+        public string IMG { get; set; }
+        
     }
 }

@@ -25,6 +25,16 @@ namespace Business.Concretes
         {
             await _courseDal.AddAsync(course);
         }
+       
+        public async Task Delete(Course course,bool perm)
+        {
+           await _courseDal.DeleteAsync(course,perm);           
+        }
+
+        public async Task<IPaginate<Course>> Get(int Id)
+        {
+            return await _courseDal.GetListAsync(i => i.Id == Id);           
+        }
 
         public async Task<IPaginate<CourseCategoryDTO>> GetCourseCategoryName()
         {

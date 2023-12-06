@@ -12,23 +12,29 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concretes
 {
-    public class EfCourseDal : EfRepositoryBase<Course, int, NorthwindContext>, ICourseDal
+    public class EfCourseDal : EfRepositoryBase<Course, int, NorthwindContext>,ICourseDal
     {
         NorthwindContext _context;
+
         public EfCourseDal(NorthwindContext context) : base(context)
         {
             _context = context;
+
         }
 
         public async Task<IPaginate<CourseCategoryDTO>> CourseCategory()
         {
             var result = await (from course in _context.Courses
-                          join category in _context.Categories
-                          on course.categoryId equals category.Id
+                          join category in _context.Categories on course.categoryId equals category.Id
+                          join user in _context.Users on course.UserId equals user.Id
                           select new CourseCategoryDTO
                           {
                               categoryName = category.Name,
                               courseName = course.Name,
+                              ownerName = user.Name,
+                              ownerSurname = user.Surname,
+                              description = course.Description,
+                              IMG = course.ImgPath
                           }).ToPaginateAsync(0, 20, 0);
             return result;
         }

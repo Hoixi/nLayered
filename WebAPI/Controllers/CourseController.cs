@@ -15,7 +15,7 @@ namespace WebAPI.Controllers
             _courseService = courseService;
         }
 
-        [HttpGet("Get")]
+        [HttpGet("GetList")]
         public async Task<IActionResult> Get()
         {
             var result = await _courseService.GetCourseCategoryName();
@@ -27,6 +27,20 @@ namespace WebAPI.Controllers
         {
             await _courseService.Add(course);
             return Ok();
+        }
+
+        [HttpPost("Delete")]
+        public async Task<IActionResult> Delete(Course course,bool permanentlyDelete)
+        {
+            await _courseService.Delete(course, permanentlyDelete);
+            return Ok();
+        }
+
+        [HttpGet("Get")]
+        public async Task<IActionResult> Get(int Id)
+        {
+            var result = await _courseService.Get(Id);
+            return Ok(result);
         }
     }
 }
