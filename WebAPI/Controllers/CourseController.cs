@@ -29,6 +29,13 @@ namespace WebAPI.Controllers
             return Ok();
         }
 
+        [HttpPost("Update")]
+        public async Task<IActionResult> Update([FromBody] Course course)
+        {
+            await _courseService.Update(course);
+            return Ok();
+        }
+
         [HttpPost("Delete")]
         public async Task<IActionResult> Delete(Course course,bool permanentlyDelete)
         {

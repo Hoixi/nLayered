@@ -25,6 +25,20 @@ namespace WebAPI.Controllers
             return Ok(user);
         }
 
+        [HttpPost("Update")]
+        public async Task<IActionResult> Update([FromBody] User user)
+        {
+            await _userService.Update(user);
+            return Ok();
+        }
+
+        [HttpPost("Delete")]
+        public async Task<IActionResult> Delete([FromBody] User user, bool permanentlyDelete)
+        {
+            await _userService.Delete(user,permanentlyDelete);
+            return Ok();
+        }
+
         [HttpGet("Get")]
         public async Task<IActionResult> Get(int Id)
         {

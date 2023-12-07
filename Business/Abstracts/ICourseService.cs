@@ -13,6 +13,7 @@ namespace Business.Abstracts
     {
         Task<IPaginate<CourseCategoryDTO>> GetCourseCategoryName();
         Task Add(Course course);
+        Task Update(Course course);
         Task Delete(Course course,bool perm);
         Task<IPaginate<Course>> Get(int Id);
     }

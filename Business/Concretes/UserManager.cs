@@ -24,6 +24,10 @@ namespace Business.Concretes
         {
             await _userDal.AddAsync(user);
         }
+        public async Task Update(User user)
+        {
+            await _userDal.UpdateAsync(user);
+        }
 
         public async Task Delete(User user, bool perm)
         {

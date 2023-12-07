@@ -23,6 +23,20 @@ namespace WebAPI.Controllers
             return Ok();
         }
 
+        [HttpPost("Update")]
+        public async Task<IActionResult> Update([FromBody] Category category)
+        {
+            await _categoryService.Update(category);
+            return Ok();
+        }
+
+        [HttpPost("Delete")]
+        public async Task<IActionResult> Delete([FromBody] Category category)
+        {
+            await _categoryService.Delete(category);
+            return Ok();
+        }
+
         [HttpGet("GetList")]
         public async Task<IActionResult> GetList()
         {

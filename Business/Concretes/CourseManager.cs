@@ -26,6 +26,11 @@ namespace Business.Concretes
             await _courseDal.AddAsync(course);
         }
        
+        public async Task Update(Course course)
+        {
+            await _courseDal.UpdateAsync(course);
+        }
+       
         public async Task Delete(Course course,bool perm)
         {
            await _courseDal.DeleteAsync(course,perm);           

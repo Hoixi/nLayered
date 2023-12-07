@@ -12,4 +12,6 @@ public interface ICategoryService
 {
     Task<IPaginate<Category>> GetListAsync();
     Task Add(Category category);
+    Task Update(Category category);
+    Task Delete(Category category);
 }

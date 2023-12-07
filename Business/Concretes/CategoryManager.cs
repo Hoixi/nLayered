@@ -23,6 +23,16 @@ public class CategoryManager : ICategoryService
         await _categoryDal.AddAsync(category);
     }
 
+    public async Task Update(Category category)
+    {
+        await _categoryDal.UpdateAsync(category);
+    }
+
+    public async Task Delete(Category category)
+    {
+        await _categoryDal.DeleteAsync(category);
+    }
+
     public async Task<IPaginate<Category>> GetListAsync()
     {
         return await _categoryDal.GetListAsync();

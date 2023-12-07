@@ -11,6 +11,7 @@ namespace Business.Abstracts
     public interface IUserService
     {
         Task Add(User user);
+        Task Update(User user);
         Task Delete(User user, bool perm);
         Task<IPaginate<User>> Get(int Id);
     }
