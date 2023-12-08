@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Concretes
 {
-    public class EfCourseDal : EfRepositoryBase<Course, int, NorthwindContext>,ICourseDal
+    public class EfCourseDal : EfRepositoryBase<Course, Guid, NorthwindContext>,ICourseDal
     {
         NorthwindContext _context;
 

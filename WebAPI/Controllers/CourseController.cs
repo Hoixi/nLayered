@@ -1,4 +1,5 @@
 ﻿using Business.Abstracts;
+using Business.Dtos.Requests;
 using Entities.Concrates;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -23,10 +24,10 @@ namespace WebAPI.Controllers
         }
 
         [HttpPost("Add")]
-        public async Task<IActionResult> Add([FromBody] Course course)
+        public async Task<IActionResult> Add([FromBody] CreateCourseRequest createCourseRequest)
         {
-            await _courseService.Add(course);
-            return Ok();
+           var result= await _courseService.Add(createCourseRequest);
+            return Ok(result);
         }
 
         [HttpPost("Update")]
@@ -44,7 +45,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet("Get")]
-        public async Task<IActionResult> Get(int Id)
+        public async Task<IActionResult> Get(Guid Id)
         {
             var result = await _courseService.Get(Id);
             return Ok(result);

@@ -17,8 +17,8 @@ public static class DataAccessServiceRegistration
     public static IServiceCollection AddDataAccessServices(this IServiceCollection services, IConfiguration configuration)
     {
         //services.AddDbContext<NorthwindContext>(options => options.UseInMemoryDatabase("nArchitecture"));
-        //services.AddDbContext<NorthwindContext>(options => options.UseSqlServer(configuration.GetConnectionString("RentACar")));
-        services.AddDbContext<NorthwindContext>(options => options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=TobetoProjectDb;Trusted_Connection=true"));
+        services.AddDbContext<NorthwindContext>(options => options.UseSqlServer(configuration.GetConnectionString("TobetoCourse")));
+        //services.AddDbContext<NorthwindContext>(options => options.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=TobetoProjectDb;Trusted_Connection=true"));
         services.AddScoped<ICategoryDal, EfCategoryDal>();
         services.AddScoped<ICourseDal, EfCourseDal>();
         services.AddScoped<IUserDal, EfUserDal>();

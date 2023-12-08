@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Abstracts
 {
-    public interface ICourseDal:IRepository<Course,int>,IAsyncRepository<Course, int>
+    public interface ICourseDal:IRepository<Course,Guid>,IAsyncRepository<Course, Guid>
     {
         Task<IPaginate<CourseCategoryDTO>> CourseCategory();
     }

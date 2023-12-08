@@ -1,4 +1,6 @@
-﻿using Core.DataAccess.Paging;
+﻿using Business.Dtos.Requests;
+using Business.Dtos.Responses;
+using Core.DataAccess.Paging;
 using Entities.Concrates;
 using Entities.DTOs;
 using System;
@@ -12,9 +14,9 @@ namespace Business.Abstracts
     public interface ICourseService
     {
         Task<IPaginate<CourseCategoryDTO>> GetCourseCategoryName();
-        Task Add(Course course);
+        Task<CreatedCourseResponse> Add(CreateCourseRequest createCourseRequest);
         Task Update(Course course);
         Task Delete(Course course,bool perm);
-        Task<IPaginate<Course>> Get(int Id);
+        Task<IPaginate<Course>> Get(Guid Id);
     }
 }
