@@ -10,6 +10,6 @@ namespace Business.Abstracts;
 
 public interface ICategoryService
 {
-    Task<IPaginate<Category>> GetListAsync();
+    Task <IPaginate<Category>> GetListAsync();
     Task Add(Category category);
 }
